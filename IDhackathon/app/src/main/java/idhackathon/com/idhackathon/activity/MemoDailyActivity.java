@@ -29,35 +29,28 @@ public class MemoDailyActivity extends AppCompatActivity {
 
         ViewPaperAdapter adapter= new ViewPaperAdapter(getLayoutInflater());
         pager.setAdapter(adapter);
-        
-        btnCategory1.setText("운동");
-        btnCategory2.setText("하루 일기");
-        btnCategory3.setText("흡연");
+
+        btnCategory1.setText("Today");
+        btnCategory2.setText("Week");
+        btnCategory3.setText("Month");
 
     }
 
     public void mOnClick(View v){
-
-        int position;
-
         switch( v.getId() ){
             case R.id.memodaily_btnCategory1:
 
-                position=pager.getCurrentItem();
-                pager.setCurrentItem(position,true);
+                pager.setCurrentItem(1,true);
 
                 break;
 
             case R.id.memodaily_btnCategory2:
 
-                position=pager.getCurrentItem();
-                pager.setCurrentItem(position,true);
+                pager.setCurrentItem(2,true);
 
                 break;
             case R.id.memodaily_btnCategory3:
-
-                position=pager.getCurrentItem();
-                pager.setCurrentItem(position,true);
+                pager.setCurrentItem(3,true);
 
                 break;
         }
