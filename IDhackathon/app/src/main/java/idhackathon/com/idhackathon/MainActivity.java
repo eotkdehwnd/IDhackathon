@@ -9,6 +9,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import idhackathon.com.idhackathon.activity.AddScheduleActivity;
 import idhackathon.com.idhackathon.adapter.ScheduleListAdapter;
 import idhackathon.com.idhackathon.items.ScheduleItem;
 
@@ -35,6 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
         lvMainSchedule.setAdapter(adapter);
 
+        arrSchedule.add(new ScheduleItem("테스트1"));
+        arrSchedule.add(new ScheduleItem("테스트2"));
+        arrSchedule.add(new ScheduleItem("테스트3"));
+        arrSchedule.add(new ScheduleItem("테스트4"));
+
+        arrSchedule.add(new ScheduleItem("추가하기"));
+
         adapter.notifyDataSetChanged();
 
     }
@@ -48,11 +56,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i+1 == arrSchedule.size()){
                     // 마지막 버튼
-                    Intent itAddSchedule = new Intent(getApplicationContext(),MainActivity.class);
+                    Intent itAddSchedule = new Intent(getApplicationContext(),AddScheduleActivity.class);
                     startActivity(itAddSchedule);
-               }else{
-
-                }
+               }
             }
         });
     }
