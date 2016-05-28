@@ -38,11 +38,11 @@
 
     </LinearLayout>
 
-    <android.support.design.widget.TabLayout
-        android:id="@+id/memodaily_mainTab"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/colorAccent" />
+    <!--<android.support.design.widget.TabLayout-->
+        <!--android:id="@+id/memodaily_tabLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="40dp"-->
+        <!--android:background="@color/colorAccent" />-->
 
     <android.support.v4.view.ViewPager
         android:id="@+id/memodaily_pager"
