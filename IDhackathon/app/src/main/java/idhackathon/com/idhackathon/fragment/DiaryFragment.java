@@ -37,6 +37,22 @@ public class DiaryFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        arrSchedule.clear();
+
+        arrSchedule.add(new ScheduleItem("테스트1"));
+        arrSchedule.add(new ScheduleItem("테스트2"));
+        arrSchedule.add(new ScheduleItem("테스트3"));
+        arrSchedule.add(new ScheduleItem("테스트4"));
+
+        arrSchedule.add(new ScheduleItem("추가하기"));
+
+        adapter.notifyDataSetChanged();
+    }
+
     /**
      * 레이아웃 초기화
      */
@@ -47,14 +63,6 @@ public class DiaryFragment extends Fragment {
 
         lvMainSchedule.setAdapter(adapter);
 
-        arrSchedule.add(new ScheduleItem("테스트1"));
-        arrSchedule.add(new ScheduleItem("테스트2"));
-        arrSchedule.add(new ScheduleItem("테스트3"));
-        arrSchedule.add(new ScheduleItem("테스트4"));
-
-        arrSchedule.add(new ScheduleItem("추가하기"));
-
-        adapter.notifyDataSetChanged();
 
 
 
