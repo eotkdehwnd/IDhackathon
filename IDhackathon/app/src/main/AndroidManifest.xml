@@ -11,15 +11,18 @@
         <activity android:name=".activity.AddScheduleActivity">
         </activity>
         <activity android:name=".activity.MemoDailyActivity" android:label="addscheduleactivity" >
-
+        </activity>
+        <activity android:name=".activity.MemoAlarmActivity" android:label="memoalarmactivity" />
+        <activity android:name=".MainActivity" android:label="memodailyactivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MemoAlarmActivity" android:label="memoalarmactivity" />
-        <activity android:name=".MainActivity" android:label="memodailyactivity" />
+        <activity android:name=".activity.ScheduleStatsActivity">
+
+        </activity>
 
     </application>
 
