@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="57dp"
             android:text="알람 시간을 등록해 주세요."
+            android:textColor="#3f3f3f"
             android:textStyle="bold"
             android:textSize="20dp"/>
 
