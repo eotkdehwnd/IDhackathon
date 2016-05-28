@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -71,6 +72,11 @@ public class ViewPaperAdapter extends PagerAdapter{
                 inflater.getContext().startActivity(itMain);
             }
         });
+
+        //이미지 생성
+        ImageView imgGood = (ImageView)view.findViewById(R.id.memodaily_imgGood);
+        ImageView imgSad = (ImageView)view.findViewById(R.id.memodaily_imgSad);
+        ImageView imgAngry = (ImageView)view.findViewById(R.id.memodaily_imgAngry);
 
         container.addView(view);
 

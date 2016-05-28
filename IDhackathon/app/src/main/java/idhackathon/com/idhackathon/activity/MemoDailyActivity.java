@@ -45,16 +45,16 @@ public class MemoDailyActivity extends AppCompatActivity {
         switch( v.getId() ){
             case R.id.memodaily_btnCategory1:
 
-                pager.setCurrentItem(1,true);
+                pager.setCurrentItem(0,true);
                 break;
 
             case R.id.memodaily_btnCategory2:
 
-                pager.setCurrentItem(2,true);
+                pager.setCurrentItem(1,true);
                 break;
             case R.id.memodaily_btnCategory3:
 
-                pager.setCurrentItem(3,true);
+                pager.setCurrentItem(2,true);
                 break;
         }
     }
