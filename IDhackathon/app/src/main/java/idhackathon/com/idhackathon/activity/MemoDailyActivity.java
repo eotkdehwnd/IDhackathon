@@ -1,6 +1,7 @@
 package idhackathon.com.idhackathon.activity;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -15,6 +16,7 @@ import idhackathon.com.idhackathon.adapter.ViewPaperAdapter;
 public class MemoDailyActivity extends AppCompatActivity {
 
     ViewPager pager;
+    TabLayout tabLayout;
     Button btnCategory1, btnCategory2, btnCategory3;
 
     @Override
@@ -29,6 +31,9 @@ public class MemoDailyActivity extends AppCompatActivity {
 
         ViewPaperAdapter adapter= new ViewPaperAdapter(getLayoutInflater());
         pager.setAdapter(adapter);
+
+//        tabLayout = (TabLayout) findViewById(R.id.memodaily_tabLayout);
+//        tabLayout.setupWithViewPager(pager);
 
         btnCategory1.setText("Today");
         btnCategory2.setText("Week");
