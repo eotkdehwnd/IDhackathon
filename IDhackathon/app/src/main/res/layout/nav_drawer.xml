@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.NavigationView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_veiw_device"
+    android:orientation="vertical" android:layout_width="220dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start">
+        <ListView
+            android:id="@+id/lvNav"
+            android:entries="@array/nav"
+            android:paddingTop="30dp"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:divider="#00000000"
+            android:listSelector="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></ListView>
+
+</android.support.design.widget.NavigationView>
