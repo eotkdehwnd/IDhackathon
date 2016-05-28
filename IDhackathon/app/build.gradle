@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
+// htpclient를 sdk 23에서 사용할려면 추가해줘야 함.
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "idhackathon.com.idhackathon"
@@ -20,8 +22,14 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5.2'
+    compile 'org.apache.httpcomponents:httpmime:4.5.2'
+    configurations {
+        all*.exclude group: 'commons-logging', module: 'commons-logging'
+        all*.exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
 }

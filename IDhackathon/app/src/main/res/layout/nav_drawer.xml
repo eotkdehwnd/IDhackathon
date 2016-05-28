@@ -7,9 +7,6 @@
         <ListView
             android:id="@+id/lvNav"
             android:entries="@array/nav"
-            android:paddingTop="30dp"
-            android:paddingLeft="24dp"
-            android:paddingRight="24dp"
             android:divider="#00000000"
             android:listSelector="@android:color/transparent"
             android:layout_width="match_parent"
