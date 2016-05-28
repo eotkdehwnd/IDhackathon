@@ -29,12 +29,6 @@
             android:text="덕담"
             android:textSize="13dp"
             />
-        <Button
-            android:id="@+id/memodaily_btnEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="닫기"/>
-
     </LinearLayout>
 
     <LinearLayout
@@ -62,5 +56,15 @@
             android:layout_height="wrap_content" />
 
     </LinearLayout>
+
+    <Button
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:id="@+id/memodaily_btnEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닫기"/>
+
+
 
 </LinearLayout>
