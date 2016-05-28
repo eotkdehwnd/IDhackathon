@@ -14,17 +14,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
             android:text="메모알람 제목"
             android:textSize="25dp"/>
-
-        <TextView
-            android:id="@+id/memoalarm_txtAlarmCount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
-            android:text="메모알람 카운트"
-            android:textSize="20dp"/>
 
     </LinearLayout>
 
@@ -83,7 +75,7 @@
             android:text="설정"/>
 
         <Button
-            android:id="@+id/memoalarm_btnEnd"
+            android:id="@+id/memoalarm_btnCencle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="취소"/>

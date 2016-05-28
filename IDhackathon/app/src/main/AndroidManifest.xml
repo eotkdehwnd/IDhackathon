@@ -10,7 +10,7 @@
         android:theme="@style/CustomNoActionBar">
         <activity android:name=".activity.AddScheduleActivity">
         </activity>
-        <activity android:name=".MainActivity" android:label="addscheduleactivity" >
+        <activity android:name=".activity.MemoDailyActivity" android:label="addscheduleactivity" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.MemoAlarmActivity" android:label="memoalarmactivity" />
-        <activity android:name=".activity.MemoDailyActivity" android:label="memodailyactivity" />
+        <activity android:name=".MainActivity" android:label="memodailyactivity" />
 
     </application>
 
