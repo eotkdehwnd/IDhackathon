@@ -1,11 +1,13 @@
 package idhackathon.com.idhackathon.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import idhackathon.com.idhackathon.MainActivity;
 import idhackathon.com.idhackathon.R;
 
 /**
@@ -30,15 +32,16 @@ public class MemoAlarmActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(itMain);
             }
         });
 
         btnCencle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(itMain);
 
             }
         });

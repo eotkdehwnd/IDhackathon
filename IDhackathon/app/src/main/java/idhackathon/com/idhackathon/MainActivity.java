@@ -7,11 +7,14 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import idhackathon.com.idhackathon.activity.AddScheduleActivity;
+import idhackathon.com.idhackathon.activity.MemoAlarmActivity;
+import idhackathon.com.idhackathon.activity.MemoDailyActivity;
 import idhackathon.com.idhackathon.adapter.ScheduleListAdapter;
 import idhackathon.com.idhackathon.items.ScheduleItem;
 
@@ -22,13 +25,24 @@ public class MainActivity extends AppCompatActivity {
     ListView lvMainSchedule;
     ScheduleListAdapter adapter;
     ArrayList<ScheduleItem> arrSchedule = new ArrayList<>();
+    Button btnstats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         initializeLayout();
         setListener();
+
+        btnstats = (Button)findViewById(R.id.btnstats);
+        btnstats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent itMemoDaily = new Intent(getApplicationContext(),MemoDailyActivity.class);
+                startActivity(itMemoDaily);
+            }
+        });
     }
 
     /**
@@ -50,6 +64,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
 
+
+
     }
 
     /**
@@ -60,10 +76,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i+1 == arrSchedule.size()){
-                    // 마지막 버튼
+                    // 추가하기
                     Intent itAddSchedule = new Intent(getApplicationContext(),AddScheduleActivity.class);
                     startActivity(itAddSchedule);
-               }
+               }else {
+                    Intent itMemoAlarm = new Intent(getApplicationContext(), MemoAlarmActivity.class);
+                    startActivity(itMemoAlarm);
+                }
             }
         });
     }
