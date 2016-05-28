@@ -7,17 +7,19 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".AddScheduleActivity">
+        android:theme="@style/CustomNoActionBar">
+        <activity android:name=".activity.AddScheduleActivity">
+        </activity>
+        <activity android:name=".MainActivity" android:label="addscheduleactivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" android:label="addscheduleactivity" />
-        <activity android:name=".MemoAlarmActivity" android:label="memoalarmactivity" />
-        <activity android:name=".MemoDailyActivity" android:label="memodailyactivity" />
+        <activity android:name=".activity.MemoAlarmActivity" android:label="memoalarmactivity" />
+        <activity android:name=".activity.MemoDailyActivity" android:label="memodailyactivity" />
 
     </application>
 

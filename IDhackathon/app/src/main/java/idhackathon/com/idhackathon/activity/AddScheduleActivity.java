@@ -1,4 +1,4 @@
-package idhackathon.com.idhackathon;
+package idhackathon.com.idhackathon.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
 import android.widget.TextView;
+
+import idhackathon.com.idhackathon.R;
 
 /**
  * Created by Jungminki on 2016-05-28.
