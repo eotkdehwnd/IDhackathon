@@ -4,20 +4,31 @@ package idhackathon.com.idhackathon.items;
  * Created by Kim on 2016-05-28.
  */
 public class ScheduleItem {
+    int id;
     String time;
     String msg;
     String type;
 
-    public ScheduleItem(String time) {
-        this.time = time;
+    public ScheduleItem() {
+        this.id = 0;
+        this.time = "";
         this.msg = "";
         this.type = "";
     }
 
-    public ScheduleItem(String time, String msg, String type) {
+    public ScheduleItem(int id,String time, String msg, String type) {
+        this.id = id;
         this.time = time;
         this.msg = msg;
         this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTime() {

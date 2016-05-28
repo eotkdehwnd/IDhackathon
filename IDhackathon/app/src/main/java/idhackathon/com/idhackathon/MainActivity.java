@@ -9,9 +9,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
-import idhackathon.com.idhackathon.activity.MemoDailyActivity;
+import idhackathon.com.idhackathon.activity.ScheduleStatsActivity;
 import idhackathon.com.idhackathon.adapter.MainFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private NavigationView mNavigationView;
     private TabLayout tabLayout;
     private TabLayout.Tab tab;
+    private ListView lvNav;
 
     Button btnstats;
 
@@ -57,12 +60,35 @@ public class MainActivity extends AppCompatActivity {
             tab = tabLayout.getTabAt(i);
             tab.setCustomView(mainFragmentAdapter.getTabView(i));
         }
+
+        mDrawer = (DrawerLayout)View.inflate(getApplicationContext(),R.layout.nav_drawer,null);
+        lvNav = (ListView)mDrawer.findViewById(R.id.lvNav);
     }
 
     /**
      * 리스너 설정
      */
     private void setListener(){
+        lvNav.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    // 통계
+                    case 0:
+                        Intent intent = new Intent(getApplicationContext(), ScheduleStatsActivity.class);
+                        startActivity(intent);
+                        break;
+
+                    // 설정
+                    case 1:
+//                        Intent itPurchaseList = new Intent(getApplicationContext(), PurchaseListActivity.class);
+//                        startActivity(itPurchaseList);
+//                        break;
+
+                }
+
+            }
+        });
 
     }
 
