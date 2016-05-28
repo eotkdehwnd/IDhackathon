@@ -1,12 +1,18 @@
 package idhackathon.com.idhackathon.adapter;
 
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import idhackathon.com.idhackathon.R;
+import idhackathon.com.idhackathon.activity.MemoDailyActivity;
 
 /**
  * Created by Kim on 2016-05-29.
@@ -35,7 +41,7 @@ public class ScheduleStatsAdapter extends PagerAdapter {
     //첫번째 파라미터 : ViewPager
     //두번째 파라미터 : ViewPager가 보여줄 View의 위치(가장 처음부터 0,1,2,3...)
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, final int position) {
 
         View view=null;
 
@@ -46,6 +52,35 @@ public class ScheduleStatsAdapter extends PagerAdapter {
         //만들어진 View안에 있는 ImageView 객체 참조
         //위에서 inflated 되어 만들어진 view로부터 findViewById()를 해야 하는 것에 주의.
         View layoutScheduleStatsItem= (LinearLayout)view.findViewById(R.id.layoutScheduleStatsItem);
+
+        ImageButton imgLeft = (ImageButton)view.findViewById(R.id.stats_imgLeft);
+        imgLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+        ImageButton imgRight = (ImageButton)view.findViewById(R.id.stats_imgRight);
+
+        ImageView imgStats = (ImageView)view.findViewById(R.id.stats_imgStats);
+
+        TextView txtCount = (TextView)view.findViewById(R.id.stats_txtCount);
+
+        TextView txtTitle = (TextView)view.findViewById(R.id.stats_txtTitle);
+        txtTitle.setText("Today's Alarm");
+
+        TextView txtTime = (TextView)view.findViewById(R.id.stats_txtTime);
+
+        TextView txtContent = (TextView)view.findViewById(R.id.stats_txtContent);
+
+        Button btnEnd = (Button)view.findViewById(R.id.stats_btnEnd);
+        btnEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent itMemoDaily = new Intent(inflater.getContext().getApplicationContext(),MemoDailyActivity.class);
+                inflater.getContext().startActivity(itMemoDaily);
+            }
+        });
+
 
         //ViewPager에 만들어 낸 View 추가
         container.addView(view);

@@ -30,14 +30,14 @@ public class MainActivity extends AppCompatActivity {
         initializeLayout();
         setListener();
 
-        btnstats = (Button)findViewById(R.id.btnstats);
-        btnstats.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent itMemoDaily = new Intent(getApplicationContext(),MemoDailyActivity.class);
-                startActivity(itMemoDaily);
-            }
-        });
+//        btnstats = (Button)findViewById(R.id.btnstats);
+//        btnstats.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent itMemoDaily = new Intent(getApplicationContext(),MemoDailyActivity.class);
+//                startActivity(itMemoDaily);
+//            }
+//        });
     }
 
     /**
