@@ -13,10 +13,7 @@ import android.widget.TextView;
 public class AddScheduleActivity extends AppCompatActivity {
 
     Button btnStart, btnEnd;
-    TextView txtTimeEnd;
     NumberPicker npHour, npMin;
-    Integer time;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +24,6 @@ public class AddScheduleActivity extends AppCompatActivity {
         npMin = (NumberPicker) findViewById(R.id.timer_npMin);
         btnStart = (Button) findViewById(R.id.timer_btnStart);
         btnEnd = (Button) findViewById(R.id.timer_btnEnd);
-        txtTimeEnd = (TextView) findViewById(R.id.timer_txtTimeEnd);
 
         npHour.setMinValue(0);
         npMin.setMinValue(0);
@@ -38,25 +34,10 @@ public class AddScheduleActivity extends AppCompatActivity {
         npHour.setWrapSelectorWheel(true);
         npMin.setWrapSelectorWheel(true);
 
-        npMin.setOnValueChangedListener(new NumberPicker.OnValueChangeListener() {
-            @Override
-            public void onValueChange(NumberPicker picker, int oldVal, int newVal) {
-
-                if (npHour.getValue() == 0) {
-                    if (newVal == 0) {
-                        npHour.setValue(1);
-                    }
-                } else if (npHour.getValue() == 1) {
-                    if (newVal == 0) {
-                        npHour.setValue(0);
-                    }
-                }
-            }
-        });
-
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
             }
         });
