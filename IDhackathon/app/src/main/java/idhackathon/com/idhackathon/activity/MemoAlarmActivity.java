@@ -2,6 +2,8 @@ package idhackathon.com.idhackathon.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import idhackathon.com.idhackathon.R;
@@ -11,8 +13,8 @@ import idhackathon.com.idhackathon.R;
  */
 public class MemoAlarmActivity extends AppCompatActivity {
 
-    TextView txtTitle, txtAlarmCount;
-    Integer count = 1;
+    TextView txtTitle;
+    Button btnStart, btnCencle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,10 +22,26 @@ public class MemoAlarmActivity extends AppCompatActivity {
         setContentView(R.layout.activity_memoalarm);
 
         txtTitle = (TextView)findViewById(R.id.memoalarm_txtTitle);
-        txtAlarmCount = (TextView)findViewById(R.id.memoalarm_txtAlarmCount);
+        btnStart = (Button) findViewById(R.id.memoalarm_btnStart);
+        btnCencle = (Button) findViewById(R.id.memoalarm_btnCencle);
 
         txtTitle.setText("지금 기분이 어떠세요?");
-        txtAlarmCount.setText("오늘의 알람" + count + "번 째");
+
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        btnCencle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
 
     }
 
