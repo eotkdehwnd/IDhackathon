@@ -2,32 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@drawable/bg">
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:weightSum="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="57dp"
             android:text="알람 시간을 등록해 주세요."
+            android:textStyle="bold"
             android:textSize="20dp"/>
 
         <Spinner
             android:id="@+id/timer_spinCategory"
-            android:layout_margin="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_marginTop="27dp"
+            android:layout_width="280dp"
+            android:layout_height="43dp">
         </Spinner>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="20dp"
+        android:layout_marginTop="37dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
@@ -37,13 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:focusable="true"
-            android:focusableInTouchMode="true"
-            />
+            android:focusableInTouchMode="true"/>
+            <!--android:solidColor="#f2f2f2"-->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="시"
+            android:textSize="30dp"
+            android:text=" : "
             android:layout_gravity="center_vertical" />
         <NumberPicker
             android:id="@+id/timer_npMin"
@@ -51,30 +54,28 @@
             android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="분"
-            android:layout_gravity="center_vertical" />
+            <!--android:solidColor="#f2f2f2"-->
     </LinearLayout>
 
     <LinearLayout
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center">
-        <Button
+        <ImageButton
             android:id="@+id/timer_btnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="저장"/>
+            android:src="@drawable/btn_pressed01"
+            android:layout_marginRight="21dp"
+            android:background="@null"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/timer_btnCencle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="취소"/>
+            android:src="@drawable/btn_normal02"
+            android:background="@null"/>
     </LinearLayout>
 
 </LinearLayout>

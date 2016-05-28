@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f2888a">
 
     <LinearLayout
+        android:background="@drawable/bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -13,15 +21,17 @@
             android:id="@+id/memoalarm_txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="57dp"
             android:text="메모알람 제목"
-            android:textSize="25dp"/>
+            android:textColor="#3f3f3f"
+            android:textStyle="bold"
+            android:textSize="20dp"/>
 
     </LinearLayout>
 
 
     <LinearLayout
+        android:layout_marginTop="33dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -29,36 +39,47 @@
 
         <ImageButton
             android:id="@+id/memoalarm_imgGood"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/feeling_icon_01_normal"/>
 
         <ImageButton
             android:id="@+id/memoalarm_imgSad"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/feeling_icon_02_normal"/>
 
         <ImageButton
             android:id="@+id/memoalarm_imgAngry"
-            android:layout_margin="10dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_marginRight="14dp"
+            android:src="@drawable/feeling_icon_03_normal"/>
 
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="38dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/memoalarm_editMemoContent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-
-            android:hint="메모를 입력하세요."/>
+            android:layout_width="286dp"
+            android:layout_height="109dp"
+            android:inputType="textCapSentences|textMultiLine"
+            android:hint="메모를 입력하세요."
+            android:textColor="#555555"
+            android:padding="3dp"
+            android:background="@drawable/border"
+            />
 
     </LinearLayout>
 
@@ -68,17 +89,20 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center">
-        <Button
+        <ImageButton
             android:id="@+id/memoalarm_btnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="설정"/>
+            android:background="@null"
+            android:layout_marginRight="21dp"
+            android:src="@drawable/btn_pressed01"/>
 
-        <Button
+        <ImageButton
             android:id="@+id/memoalarm_btnCencle"
             android:layout_width="wrap_content"
+            android:background="@null"
             android:layout_height="wrap_content"
-            android:text="취소"/>
+            android:src="@drawable/btn_normal02"/>
     </LinearLayout>
-
+</LinearLayout>
 </LinearLayout>

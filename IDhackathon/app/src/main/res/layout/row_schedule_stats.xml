@@ -7,45 +7,59 @@
     android:id="@+id/layoutScheduleStatsItem">
 
     <LinearLayout
-        android:gravity="center_horizontal"
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
+        <ImageButton
+            android:id="@+id/stats_imgLeft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="left" />
 
         <ImageView
+            android:id="@+id/stats_imgStats"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@color/colorAccent" />
 
-        <TextView
+        <ImageButton
+            android:id="@+id/stats_imgRight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="right" />
     </LinearLayout>
 
     <TextView
+        android:id="@+id/stats_txtCount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="1/3" />
 
     <TextView
+        android:id="@+id/stats_txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Today's Alarm" />
 
     <TextView
+        android:id="@+id/stats_txtTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="8:30" />
 
     <TextView
+        android:id="@+id/stats_txtContent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="트와이스 노래 들으면서 출근하는 중!
         월요일이라 좀 힘들지만 달려보자." />
+
+    <Button
+        android:id="@+id/stats_btnEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닫기"
+        android:textSize="15dp"/>
 </LinearLayout>
