@@ -82,15 +82,15 @@ public class AddScheduleActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (npHour.getValue() < 10) {
-                    Hour = 0 + npHour.getContext().toString();
+                    Hour = 0 + Integer.toString(npHour.getValue());
                 } else {
-                    Hour = npHour.getContext().toString();
+                    Hour = Integer.toString(npHour.getValue());
                 }
 
                 if (npMin.getValue() < 10) {
-                    Min = 0 + npMin.getContext().toString();
+                    Min = 0 +  Integer.toString(npMin.getValue());
                 } else {
-                    Min = npMin.getContext().toString();
+                    Min = Integer.toString(npMin.getValue());
                 }
 
                 new NetworkAddSchedule().execute();
@@ -149,7 +149,8 @@ public class AddScheduleActivity extends AppCompatActivity {
                         "https://flow-alarm-spb829.c9users.io/json/alarm_new");
 
 
-                name_value.add(new BasicNameValuePair("time", Hour+":"+Min));
+                name_value.add(new BasicNameValuePair("time", Hour + ":" + Min));
+                Log.e("llll", Hour + ":" +Min);
                 name_value.add(new BasicNameValuePair("msg", "지금 기분이 어떠신가요"));
                 name_value.add(new BasicNameValuePair("type", "하루일기"));
 
