@@ -91,6 +91,7 @@ public class DiaryFragment extends Fragment {
                     startActivity(itAddSchedule);
                 }else {
                     Intent itMemoAlarm = new Intent(cView.getContext(), MemoAlarmActivity.class);
+                    itMemoAlarm.putExtra("id",arrSchedule.get(i).getId());
                     startActivity(itMemoAlarm);
                 }
             }
@@ -128,14 +129,14 @@ public class DiaryFragment extends Fragment {
                         String type = obj_boothIdeas.getString("type");
 
 
-                        ScheduleItem items = new ScheduleItem(time, msg, type);
+                        ScheduleItem items = new ScheduleItem(id, time, msg, type);
 
                         arrSchedule.add(items);
 
                         // Adapter에게 데이터를 넣었으니 갱신하라고 알려줌
                         adapter.notifyDataSetChanged();
                     }
-                    arrSchedule.add(new ScheduleItem("추가하기"));
+                    arrSchedule.add(new ScheduleItem());
 
                     adapter.notifyDataSetChanged();
 
