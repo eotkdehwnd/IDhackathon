@@ -126,23 +126,28 @@ public class DiaryFragment extends Fragment {
 
                         ScheduleItem items = new ScheduleItem(id, time, msg, type,(index/2==0?true:false));
 
-//                        boolean check = false;
-//                        for(int i=0; i<arrSchedule.size(); i++){
-//                            int temp1 = Integer.parseInt(arrSchedule.get(i).getTime().replaceAll(":", ""));
-//                            int temp2 = Integer.parseInt(time.replaceAll(":",""));
-//                            Log.e("aaaa", temp1+"");
-//                            if(temp1 < temp2){
-//                                continue;
-//                            }
-//                            else{
-//                                // 새로들어온게 더 빠른거면
-//                                arrSchedule.add(i,items);
-//                                check = true;
-//                            }
-//                        }
-//                        if(!check){
+                        boolean check = false;
+
+                        for(int i=0; i<arrSchedule.size(); i++){
+                            int temp1 = Integer.parseInt(arrSchedule.get(i).getTime().replaceAll(":", ""));
+                            int temp2 = Integer.parseInt(time.replaceAll(":",""));
+
+                            // 지금 들어온 값이 빨라
+                            if(temp1 > temp2){
+                                arrSchedule.add(i,items);
+                                check = true;
+                                break;
+                            }
+                            else{
+                                if(i == arrSchedule.size()-1){
+                                    break;
+                                }
+                                continue;
+                            }
+                        }
+                        if(!check){
                             arrSchedule.add(items);
-//                        }
+                        }
 
                     }
 
