@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="서비스 이름"
+            android:text="@string/btn_title"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 
@@ -52,9 +52,7 @@
         <NumberPicker
             android:id="@+id/timer_npHour"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
+            android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"/>
             <!--android:solidColor="#f2f2f2"-->
@@ -68,9 +66,7 @@
         <NumberPicker
             android:id="@+id/timer_npMin"
             android:layout_width="wrap_content"
-            android:layout_height="150dp"
-            android:scaleX="0.5"
-            android:scaleY="0.5"
+            android:layout_height="wrap_content"
             android:focusable="true"
             android:focusableInTouchMode="true"/>
             <!--android:solidColor="#f2f2f2"-->

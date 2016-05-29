@@ -79,6 +79,8 @@ public class MemoAlarmActivity extends AppCompatActivity {
                 }else {
                     imgGood.setImageResource(R.drawable.feeling_icon_01_normal);
                     Good = true;
+                    Sad = false;
+                    Angry= false;
                 }
             }
         });
@@ -92,6 +94,8 @@ public class MemoAlarmActivity extends AppCompatActivity {
                 }else {
                     imgSad.setImageResource(R.drawable.feeling_icon_02_normal);
                     Sad = true;
+                    Good = false;
+                    Angry = false;
                 }
             }
         });
@@ -105,6 +109,8 @@ public class MemoAlarmActivity extends AppCompatActivity {
                 }else {
                     imgAngry.setImageResource(R.drawable.feeling_icon_03_normal);
                     Angry = true;
+                    Sad = false;
+                    Good = false;
                 }
             }
         });
@@ -152,7 +158,17 @@ public class MemoAlarmActivity extends AppCompatActivity {
 
                 name_value.add(new BasicNameValuePair("alarm_id", id + ""));
                 name_value.add(new BasicNameValuePair("memo", memo));
-                name_value.add(new BasicNameValuePair("feeling", "좋아요"));
+                if(Good) {
+                    name_value.add(new BasicNameValuePair("feeling", "좋아요"));
+                }else if(Sad) {
+                    name_value.add(new BasicNameValuePair("feeling", "슬퍼요"));
+                }else if(Angry) {
+                    name_value.add(new BasicNameValuePair("feeling", "화나요"));
+                }else {
+                    Toast.makeText(getApplicationContext(), "채크해주세요.", Toast.LENGTH_SHORT).show();
+                    return 0;
+                }
+
 
                 UrlEncodedFormEntity entityRequest = new UrlEncodedFormEntity(
                         name_value, "UTF-8");
