@@ -128,7 +128,10 @@ public class DiaryFragment extends Fragment {
 
                         boolean check = false;
                         for(int i=0; i<arrSchedule.size(); i++){
-                            if(Integer.parseInt(arrSchedule.get(i).getTime()) <Integer.parseInt(time)){
+                            int temp1 = Integer.parseInt(arrSchedule.get(i).getTime().replaceAll(":", ""));
+                            int temp2 = Integer.parseInt(time.replaceAll(":",""));
+                            Log.e("aaaa", temp1+"");
+                            if(temp1 < temp2){
                                 continue;
                             }
                             else{
