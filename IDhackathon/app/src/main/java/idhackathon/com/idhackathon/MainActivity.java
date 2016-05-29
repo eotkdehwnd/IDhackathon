@@ -11,13 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import idhackathon.com.idhackathon.activity.ScheduleStatsActivity;
 import idhackathon.com.idhackathon.adapter.MainFragmentAdapter;
 
 public class MainActivity extends AppCompatActivity {
-    private DrawerLayout mDrawer;
+    private LinearLayout mDrawer;
     private NavigationView mNavigationView;
     private TabLayout tabLayout;
     private TabLayout.Tab tab;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             tab.setCustomView(mainFragmentAdapter.getTabView(i));
         }
 
-        mDrawer = (DrawerLayout)View.inflate(getApplicationContext(),R.layout.nav_drawer,null);
+        mDrawer = (LinearLayout)View.inflate(getApplicationContext(),R.layout.nav_drawer,null);
         lvNav = (ListView)mDrawer.findViewById(R.id.lvNav);
     }
 

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -36,6 +37,8 @@ public class ScheduleListAdapter  extends ArrayAdapter<ScheduleItem> {
 
             //row에 있는 정보들을 holder로 가져옴
             holder.tvScheduleTime=(TextView)convertView.findViewById(R.id.tvScheduleTime);
+            holder.imageAddSchedule = (ImageView)convertView.findViewById(R.id.imageAddSchedule);
+            holder.imageScheduleUse = (ImageView)convertView.findViewById(R.id.imageScheduleUse);
 
             convertView.setTag(holder);
         }
@@ -45,12 +48,26 @@ public class ScheduleListAdapter  extends ArrayAdapter<ScheduleItem> {
 
         ScheduleItem item = getItem(position);
 
-        holder.tvScheduleTime.setText(item.getTime());
+        String time = item.getTime();
+        if(time == ""){
+            holder.imageAddSchedule.setVisibility(View.VISIBLE);
+        }else{
+            holder.tvScheduleTime.setText(time);
+        }
+
+        if(item.isUsed()){
+            holder.imageScheduleUse.setBackgroundResource(R.drawable.use);
+        }else{
+            holder.imageScheduleUse.setBackgroundResource(R.drawable.unused);
+        }
+
         return convertView;
     }
 
     class ViewHolder {
         TextView tvScheduleTime;
+        ImageView imageAddSchedule;
+        ImageView imageScheduleUse;
     }
 
 }

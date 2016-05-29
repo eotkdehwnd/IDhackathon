@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +32,7 @@ import idhackathon.com.idhackathon.R;
  * Created by Jungminki on 2016-05-28.
  */
 public class MemoAlarmActivity extends AppCompatActivity {
-
+    int id = 0;
     TextView txtTitle;
     ImageButton btnStart, btnCencle, imgGood, imgSad, imgAngry;
     boolean Good = false, Sad = false, Angry = false;
@@ -40,6 +41,8 @@ public class MemoAlarmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memoalarm);
+
+        id = getIntent().getExtras().getInt("id");
 
         txtTitle = (TextView)findViewById(R.id.memoalarm_txtTitle);
         btnStart = (ImageButton) findViewById(R.id.memoalarm_btnStart);
@@ -143,8 +146,11 @@ public class MemoAlarmActivity extends AppCompatActivity {
                 http_post = new HttpPost(
                         "https://flow-alarm-spb829.c9users.io/json/alarm_list");
 
-                name_value.add(new BasicNameValuePair("alarm_id", 3 + ""));
-                name_value.add(new BasicNameValuePair("memo", "ㅋㅋ"));
+                EditText memoalarm_editMemoContent = (EditText)findViewById(R.id.memoalarm_editMemoContent);
+                String memo = memoalarm_editMemoContent.getText().toString();
+
+                name_value.add(new BasicNameValuePair("alarm_id", id + ""));
+                name_value.add(new BasicNameValuePair("memo", memo));
                 name_value.add(new BasicNameValuePair("feeling", "좋아요"));
 
                 UrlEncodedFormEntity entityRequest = new UrlEncodedFormEntity(

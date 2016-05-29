@@ -70,10 +70,6 @@ public class DiaryFragment extends Fragment {
         adapter = new ScheduleListAdapter(cView.getContext(), R.layout.row_schedule, arrSchedule);
 
         lvMainSchedule.setAdapter(adapter);
-
-
-
-
     }
 
     /**
@@ -127,7 +123,7 @@ public class DiaryFragment extends Fragment {
                         String type = obj_boothIdeas.getString("type");
 
 
-                        ScheduleItem items = new ScheduleItem(id, time, msg, type);
+                        ScheduleItem items = new ScheduleItem(id, time, msg, type,(index/2==0?true:false));
 
                         arrSchedule.add(items);
 

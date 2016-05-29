@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center">
     <TextView
         android:id="@+id/tvScheduleTime"
-        android:text="08:00"
-        android:textSize="30sp"
-        android:textColor="@color/colorAccent"
+        android:layout_gravity="left"
+        android:layout_marginLeft="40dp"
+        android:textSize="50sp"
+        android:textColor="#3f3f3f"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageAddSchedule"
+        android:src="@drawable/add_schedule"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/imageScheduleUse"
+        android:layout_gravity="right"
+        android:layout_marginRight="40dp"
+        android:layout_width="50dp"
+        android:layout_height="30dp" />
 </LinearLayout>
