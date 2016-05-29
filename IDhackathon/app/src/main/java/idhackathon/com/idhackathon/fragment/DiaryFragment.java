@@ -50,7 +50,6 @@ public class DiaryFragment extends Fragment {
         initializeLayout();
         setListener();
         return cView;
-
     }
 
     @Override
@@ -58,6 +57,7 @@ public class DiaryFragment extends Fragment {
         super.onResume();
 
         arrSchedule.clear();
+        adapter.notifyDataSetChanged();
         new NetworkGetScheduleList().execute();
     }
 
@@ -68,7 +68,6 @@ public class DiaryFragment extends Fragment {
         lvMainSchedule = (ListView)cView.findViewById(R.id.lvMainSchedule);
 
         adapter = new ScheduleListAdapter(cView.getContext(), R.layout.row_schedule, arrSchedule);
-
 
         lvMainSchedule.setAdapter(adapter);
     }
@@ -122,7 +121,6 @@ public class DiaryFragment extends Fragment {
                         String time = obj_boothIdeas.getString("time");
                         String msg = obj_boothIdeas.getString("msg");
                         String type = obj_boothIdeas.getString("type");
-
 
                         ScheduleItem items = new ScheduleItem(id, time, msg, type,(index/2==0?true:false));
 
@@ -196,6 +194,7 @@ public class DiaryFragment extends Fragment {
                     builder.append(line).append("\n");
                 }
 
+                Log.e("aaa",builder.toString());
                 jObjects = new JSONObject(builder.toString());
             } catch (Exception e) {
                 // 오류발생시
