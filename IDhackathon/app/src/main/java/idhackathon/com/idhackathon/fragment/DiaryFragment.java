@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -127,11 +126,23 @@ public class DiaryFragment extends Fragment {
 
                         ScheduleItem items = new ScheduleItem(id, time, msg, type,(index/2==0?true:false));
 
-                        arrSchedule.add(items);
+                        boolean check = false;
+                        for(int i=0; i<arrSchedule.size(); i++){
+                            if(Integer.parseInt(arrSchedule.get(i).getTime()) <Integer.parseInt(time)){
+                                continue;
+                            }
+                            else{
+                                // 새로들어온게 더 빠른거면
+                                arrSchedule.add(i,items);
+                                check = true;
+                            }
+                        }
+                        if(!check){
+                            arrSchedule.add(items);
+                        }
 
-                        // Adapter에게 데이터를 넣었으니 갱신하라고 알려줌
-                        adapter.notifyDataSetChanged();
                     }
+
                     arrSchedule.add(new ScheduleItem());
 
                     adapter.notifyDataSetChanged();
