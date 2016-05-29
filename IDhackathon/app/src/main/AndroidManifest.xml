@@ -9,7 +9,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/CustomNoActionBar">
+        android:theme="@style/AppTheme">
         <activity android:name=".activity.AddScheduleActivity">
         </activity>
         <activity android:name=".activity.MemoDailyActivity" android:label="addscheduleactivity" >

@@ -3,7 +3,21 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#f2888a"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="서비스 이름"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +38,7 @@
         <Spinner
             android:id="@+id/timer_spinCategory"
             android:layout_marginTop="27dp"
-            android:layout_width="280dp"
+            android:layout_width="200dp"
             android:layout_height="43dp">
         </Spinner>
     </LinearLayout>

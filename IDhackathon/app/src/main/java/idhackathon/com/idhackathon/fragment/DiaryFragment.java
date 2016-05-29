@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -68,6 +69,7 @@ public class DiaryFragment extends Fragment {
         lvMainSchedule = (ListView)cView.findViewById(R.id.lvMainSchedule);
 
         adapter = new ScheduleListAdapter(cView.getContext(), R.layout.row_schedule, arrSchedule);
+
 
         lvMainSchedule.setAdapter(adapter);
 

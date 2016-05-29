@@ -41,6 +41,7 @@ public class MemoAlarmActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memoalarm);
+        setTitle("서비스 이름");
 
         txtTitle = (TextView)findViewById(R.id.memoalarm_txtTitle);
         btnStart = (ImageButton) findViewById(R.id.memoalarm_btnStart);

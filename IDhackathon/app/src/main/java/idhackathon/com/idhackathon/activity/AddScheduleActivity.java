@@ -36,7 +36,7 @@ public class AddScheduleActivity extends AppCompatActivity {
         btnStart = (ImageButton) findViewById(R.id.timer_btnStart);
         btnCencle = (ImageButton) findViewById(R.id.timer_btnCencle);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, category);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner, category);
         spinCategory.setAdapter(adapter);
 
         npHour.setMinValue(0);
