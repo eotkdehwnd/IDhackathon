@@ -9,13 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:background="#f2888a"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+>
+
+        <ImageButton
+            android:id="@+id/imgMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7dp"
+            android:layout_marginRight="100dp"
+            android:src="@drawable/main_menu_normal"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="서비스 이름"
+            android:layout_gravity="center"
+            android:text="@string/btn_title"
             android:textColor="#ffffff"
             android:textSize="18sp" />
 

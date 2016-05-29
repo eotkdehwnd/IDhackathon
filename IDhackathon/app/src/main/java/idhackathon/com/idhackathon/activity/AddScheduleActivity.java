@@ -65,6 +65,19 @@ public class AddScheduleActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(itMain);
+
+                if (Integer.parseInt(npHour.getContext().toString()) < 10) {
+                    String Hour = 0 + npHour.getContext().toString();
+                } else {
+                    String Hour = npHour.getContext().toString();
+                }
+
+                if (Integer.parseInt(npMin.getContext().toString()) < 10) {
+                    String Min = 0 + npMin.getContext().toString();
+                } else {
+                    String Min = npMin.getContext().toString();
+                }
+
             }
         });
 

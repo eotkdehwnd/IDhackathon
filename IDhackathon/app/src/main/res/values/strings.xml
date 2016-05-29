@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">IDhackathon</string>
+    <string name="btn_title"><![CDATA[&]]> Flow</string>
 </resources>
