@@ -11,9 +11,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import idhackathon.com.idhackathon.activity.MemoDailyActivity;
 import idhackathon.com.idhackathon.activity.ScheduleStatsActivity;
 import idhackathon.com.idhackathon.adapter.MainFragmentAdapter;
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout.Tab tab;
     private ListView lvNav;
 
-    Button btnstats;
+    ImageButton imgMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,14 +36,14 @@ public class MainActivity extends AppCompatActivity {
         initializeLayout();
         setListener();
 
-//        btnstats = (Button)findViewById(R.id.btnstats);
-//        btnstats.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent itMemoDaily = new Intent(getApplicationContext(),MemoDailyActivity.class);
-//                startActivity(itMemoDaily);
-//            }
-//        });
+        imgMenu = (ImageButton)findViewById(R.id.imgMenu);
+        imgMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent itMemoDaily = new Intent(getApplicationContext(), MemoDailyActivity.class);
+                startActivity(itMemoDaily);
+            }
+        });
     }
 
     /**
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             tab.setCustomView(mainFragmentAdapter.getTabView(i));
         }
 
-        mDrawer = (LinearLayout)View.inflate(getApplicationContext(),R.layout.nav_drawer,null);
+        mDrawer = (LinearLayout)View.inflate(getApplicationContext(), R.layout.nav_drawer, null);
         lvNav = (ListView)mDrawer.findViewById(R.id.lvNav);
     }
 

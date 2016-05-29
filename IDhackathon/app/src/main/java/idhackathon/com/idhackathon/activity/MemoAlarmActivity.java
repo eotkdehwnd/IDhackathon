@@ -64,8 +64,7 @@ public class MemoAlarmActivity extends AppCompatActivity {
         btnCencle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(itMain);
+                finish();
 
             }
         });
@@ -131,6 +130,7 @@ public class MemoAlarmActivity extends AppCompatActivity {
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
             if (result == 0) {
+                Toast.makeText(getApplicationContext(), "저장되었습니다.",Toast.LENGTH_SHORT).show();
                 finish();
                 return;
             }

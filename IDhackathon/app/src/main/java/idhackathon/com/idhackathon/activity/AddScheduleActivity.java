@@ -80,20 +80,20 @@ public class AddScheduleActivity extends AppCompatActivity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(itMain);
 
-                if (Integer.parseInt(npHour.getContext().toString()) < 10) {
+                if (npHour.getValue() < 10) {
                     Hour = 0 + npHour.getContext().toString();
                 } else {
                     Hour = npHour.getContext().toString();
                 }
 
-                if (Integer.parseInt(npMin.getContext().toString()) < 10) {
+                if (npMin.getValue() < 10) {
                     Min = 0 + npMin.getContext().toString();
                 } else {
                     Min = npMin.getContext().toString();
                 }
+
+                new NetworkAddSchedule().execute();
 
             }
         });
@@ -101,8 +101,8 @@ public class AddScheduleActivity extends AppCompatActivity {
         btnCencle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent itMain = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(itMain);
+
+                finish();
             }
         });
 
@@ -125,6 +125,7 @@ public class AddScheduleActivity extends AppCompatActivity {
         protected void onPostExecute(Integer result) {
             super.onPostExecute(result);
             if (result == 0) {
+                Toast.makeText(getApplicationContext(), "저장되었습니다.",Toast.LENGTH_SHORT).show();
                 finish();
                 return;
             }
@@ -145,7 +146,7 @@ public class AddScheduleActivity extends AppCompatActivity {
                 List<NameValuePair> name_value = new ArrayList<NameValuePair>();
 
                 http_post = new HttpPost(
-                        "https://flow-alarm-spb829.c9users.io/alarm_new");
+                        "https://flow-alarm-spb829.c9users.io/json/alarm_new");
 
 
                 name_value.add(new BasicNameValuePair("time", Hour+":"+Min));
