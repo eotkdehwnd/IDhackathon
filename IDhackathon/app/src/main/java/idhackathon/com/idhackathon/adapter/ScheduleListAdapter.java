@@ -53,13 +53,14 @@ public class ScheduleListAdapter  extends ArrayAdapter<ScheduleItem> {
             holder.imageAddSchedule.setVisibility(View.VISIBLE);
         }else{
             holder.tvScheduleTime.setText(time);
+
+            if(item.isUsed()){
+                holder.imageScheduleUse.setBackgroundResource(R.drawable.use);
+            }else{
+                holder.imageScheduleUse.setBackgroundResource(R.drawable.unused);
+            }
         }
 
-        if(item.isUsed()){
-            holder.imageScheduleUse.setBackgroundResource(R.drawable.use);
-        }else{
-            holder.imageScheduleUse.setBackgroundResource(R.drawable.unused);
-        }
 
         return convertView;
     }
