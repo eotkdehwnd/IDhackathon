@@ -1,6 +1,5 @@
 package idhackathon.com.idhackathon.activity;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +24,6 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import idhackathon.com.idhackathon.MainActivity;
 import idhackathon.com.idhackathon.R;
 
 /**
